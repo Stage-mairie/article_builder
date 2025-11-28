@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulaire de création d'article - Intranet</title>
+  <link rel="stylesheet" href="src/style.css" />
+</head>
+<body>
+<div class="page-container">
+    <header>
+        <div class="header-container">
+            <img src="images/logo.png" alt="Logo de la mairie" class="logo" />
+            <h1>Création d'un Article pour l'Intranet</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <form id="article-form" action="create_draft.php" method="POST" enctype="multipart/form-data">
+                <!-- THÈME -->
+                <div class="form-group">
+                    <label for="theme">Thème de l'article <span class="required">*</span></label>
+                    <input type="text" id="theme" name="theme" placeholder="Format : [THEME]" required />
+                </div>
+
+                <!-- TITRE -->
+                <div class="form-group">
+                    <label for="article-title">Titre de l'article <span class="required">*</span></label>
+                    <input type="text" id="article-title" name="article-title" required />
+                </div>
+
+                <!-- DESCRIPTION -->
+                <div class="form-group">
+                    <label for="description">Description <span class="optional">(Facultatif)</span></label>
+                    <textarea id="description" name="description" rows="4" placeholder="Résumé rapide de l'article..."></textarea>
+                </div>
+
+                <!-- PDF -->
+                <div class="form-group">
+                    <label for="pdf-files">Fichiers PDF</label>
+                    <input type="file" id="pdf-files" name="pdf-files[]" accept="application/pdf" multiple />
+                </div>
+
+                <!-- IMAGE COUVERTURE (facultatif) -->
+                <div class="form-group">
+                    <label for="cover-image">Image de couverture</label>
+                    <input type="file" id="cover-image" name="cover-image" accept="image/*" />
+                    <small>800 x 445 pixels recommandés</small>
+                </div>
+
+                <!-- CATÉGORIES -->
+                <div class="form-group">
+                    <label for="categories">Catégories <span class="required">*</span></label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="categories" value="Actualités"> Actualités</label>
+                        <label><input type="checkbox" name="categories" value="Alerte"> Alerte</label>
+                        <label><input type="checkbox" name="categories" value="Ce Jour"> Ce Jour</label>
+                        <label><input type="checkbox" name="categories" value="Charte et conformité numérique"> Charte et conformité numérique</label>
+                        <label><input type="checkbox" name="categories" value="Déontologie"> Déontologie</label>
+                        <label><input type="checkbox" name="categories" value="Direction générale"> Direction générale</label>
+                        <label><input type="checkbox" name="categories" value="DSI"> DSI</label>
+                        <label><input type="checkbox" name="categories" value="RGPD"> RGPD</label>
+                        <label><input type="checkbox" name="categories" value="Sécurité Informatique"> Sécurité Informatique</label>
+                        <label><input type="checkbox" name="categories" value="Mis en avant"> Mis en avant</label>
+                        <label><input type="checkbox" name="categories" value="Non classé"> Non classé</label>
+                        <label><input type="checkbox" name="categories" value="Notes de services"> Notes de services</label>
+                        <label><input type="checkbox" name="categories" value="Notes et ressources"> Notes et ressources</label>
+                        <label><input type="checkbox" name="categories" value="Communication"> Communication</label>
+                        <label><input type="checkbox" name="categories" value="Direction des finances"> Direction des finances</label>
+                        <label><input type="checkbox" name="categories" value="Direction des services techniques"> Direction des services techniques</label>
+                        <label><input type="checkbox" name="categories" value="Direction des systèmes d'information"> Direction des systèmes d'information</label>
+                        <label><input type="checkbox" name="categories" value="Syndicat"> Syndicat</label>
+                        <label><input type="checkbox" name="categories" value="Vie de l'agent"> Vie de l'agent</label>
+                        <label><input type="checkbox" name="categories" value="Action sociale"> Action sociale</label>
+                        <label><input type="checkbox" name="categories" value="Appel à candidatures"> Appel à candidatures</label>
+                        <label><input type="checkbox" name="categories" value="Dialogue social"> Dialogue social</label>
+                        <label><input type="checkbox" name="categories" value="Formation"> Formation</label>
+                        <label><input type="checkbox" name="categories" value="Info carrière"> Info carrière</label>
+                        <label><input type="checkbox" name="categories" value="Prévention santé"> Prévention santé</label>
+                    </div>
+                </div>
+
+                <!-- MOTS CLÉS -->
+                <div class="form-group">
+                    <label for="keywords">Mots clé <span class="required">*</span></label>
+                    <input type="text" id="keywords" name="keywords" placeholder="Ex : appel à candidatures, note de service" required />
+                </div>
+
+                <button type="submit" class="submit-btn">Créer l'article</button>
+            </form>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mairie de Saint-André — Tous droits réservés.</p>
+    </footer>
+</div>
+
+</body>
+</html>
